@@ -166,19 +166,15 @@ function ArtworkPageContent() {
         </p>
       </div>
 
-      {/* Artwork grid — horizontal scroll row */}
-      <div className="flex gap-4 overflow-x-auto scrollbar-thin pb-4">
+      {/* Artwork grid — vertical, responsive columns */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {currentSeries.artworks.map((artwork) => (
           <button
             key={artwork.id}
             onClick={() => openArtwork(artwork.id)}
-            className="flex-shrink-0 overflow-hidden hover:opacity-85 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
+            className="w-full overflow-hidden hover:opacity-85 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
             aria-label={`View ${artwork.title}`}
-            style={{
-              height: '260px',
-              width: `calc(260px * (${artwork.aspectRatio.replace('/', ' / ')}))`,
-              aspectRatio: artwork.aspectRatio,
-            }}
+            style={{ aspectRatio: artwork.aspectRatio }}
           >
             <div
               className="w-full h-full"
