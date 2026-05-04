@@ -78,7 +78,7 @@ function SidebarContent({ onClose }: { onClose?: () => void }) {
           </Link>
         </h2>
 
-        {/* Series links — Montserrat Caption 12px */}
+        {/* Series links — Montserrat Body 16px */}
         <nav className="flex flex-col gap-1.5">
           {artworkSeries.map((series) => {
             const isActive = isArtworkPage && activeSeries === series.id
@@ -87,7 +87,7 @@ function SidebarContent({ onClose }: { onClose?: () => void }) {
                 key={series.id}
                 href={`/artwork?series=${series.id}`}
                 onClick={onClose}
-                className={`font-sans text-ds-caption leading-snug transition-colors ${
+                className={`font-sans text-ds-body leading-snug transition-colors ${
                   isActive
                     ? 'font-bold text-black'
                     : 'font-normal text-ds-grey hover:text-black'
@@ -109,7 +109,7 @@ function SidebarContent({ onClose }: { onClose?: () => void }) {
           <Link
             href="/biography"
             onClick={onClose}
-            className={`font-sans text-ds-caption transition-colors ${
+            className={`font-sans text-ds-body transition-colors ${
               isBiographyPage
                 ? 'font-bold text-black'
                 : 'font-normal text-ds-grey hover:text-black'
@@ -120,7 +120,7 @@ function SidebarContent({ onClose }: { onClose?: () => void }) {
           <Link
             href="/contact"
             onClick={onClose}
-            className={`font-sans text-ds-caption transition-colors ${
+            className={`font-sans text-ds-body transition-colors ${
               isContactPage
                 ? 'font-bold text-black'
                 : 'font-normal text-ds-grey hover:text-black'
@@ -190,7 +190,7 @@ export default function Sidebar() {
             <CloseIcon />
           </button>
         </div>
-        <Suspense fallback={<div className="p-8 font-sans text-ds-caption text-ds-grey">Loading…</div>}>
+        <Suspense fallback={<div className="p-8 font-sans text-ds-body text-ds-grey">Loading…</div>}>
           <SidebarContent onClose={() => setMobileOpen(false)} />
         </Suspense>
       </div>
